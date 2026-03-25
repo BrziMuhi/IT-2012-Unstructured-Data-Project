@@ -1,0 +1,32 @@
+2026-03-18 11:25:49,166 - ERROR - File not found: data/raw/tmdb/movie_11.json
+2026-03-18 11:25:49,166 - ERROR - File not found: data/raw/reviews/review_1.txt
+2026-03-23 22:54:47,096 - ERROR - File not found: data/raw/destinations/destination_1.json
+2026-03-23 22:54:47,107 - INFO - Successfully read text file: data/raw/reviews/review_1.txt
+2026-03-23 22:54:47,116 - INFO - Successfully read CSV file: data/raw/bookings/bookings.csv
+2026-03-23 22:55:40,203 - INFO - Successfully read JSON file: data/raw/destinations/destination_1.json
+2026-03-23 22:55:40,204 - INFO - Successfully read text file: data/raw/reviews/review_1.txt
+2026-03-23 22:55:40,205 - INFO - Successfully read CSV file: data/raw/bookings/bookings.csv
+2026-03-23 22:57:14,862 - INFO - Successfully read JSON file: data/raw/destinations/destination_1.json
+2026-03-23 22:57:14,863 - INFO - Successfully read text file: data/raw/reviews/review_1.txt
+2026-03-23 22:57:14,864 - INFO - Successfully read CSV file: data/raw/bookings/bookings.csv
+2026-03-24 01:00:53,778 - INFO - Started uploading page_1.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:00:55,847 - INFO - Successfully uploaded page_1.json to tourism-pipeline-bucket
+2026-03-24 01:02:19,268 - INFO - Pipeline started
+2026-03-24 01:02:26,214 - INFO - Started uploading page_1.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:02:28,297 - INFO - Successfully uploaded page_1.json to tourism-pipeline-bucket
+2026-03-24 01:02:28,302 - INFO - Started uploading page_2.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:02:30,356 - INFO - Successfully uploaded page_2.json to tourism-pipeline-bucket
+2026-03-24 01:02:30,361 - INFO - Started uploading page_3.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:02:32,409 - INFO - Successfully uploaded page_3.json to tourism-pipeline-bucket
+2026-03-24 01:02:32,409 - INFO - Pipeline finished successfully
+2026-03-24 01:05:05,726 - INFO - Pipeline started
+2026-03-24 01:05:05,727 - INFO - Fetching API data...
+2026-03-24 01:05:11,442 - INFO - Saving data to MongoDB...
+2026-03-24 01:05:11,457 - INFO - Uploading raw JSON files to S3...
+2026-03-24 01:05:11,803 - INFO - Started uploading page_1.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:05:13,863 - INFO - Successfully uploaded page_1.json to tourism-pipeline-bucket
+2026-03-24 01:05:13,869 - INFO - Started uploading page_2.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:05:15,930 - INFO - Successfully uploaded page_2.json to tourism-pipeline-bucket
+2026-03-24 01:05:15,937 - INFO - Started uploading page_3.json to S3 bucket tourism-pipeline-bucket
+2026-03-24 01:05:17,986 - INFO - Successfully uploaded page_3.json to tourism-pipeline-bucket
+2026-03-24 01:05:17,987 - INFO - Pipeline finished successfully
