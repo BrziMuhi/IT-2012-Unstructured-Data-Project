@@ -3,3 +3,7 @@ __pycache__/
 *.pyc
 .env
 data/raw/
+
+.env
+credentials.json
+token.pickle
