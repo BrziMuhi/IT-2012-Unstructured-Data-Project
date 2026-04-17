@@ -1,0 +1,58 @@
+{
+    "file_path": "data/processed/audio/extracted_audio.mp3",
+    "language": "en",
+    "duration": 331.3,
+    "segments": [
+        {
+            "start": 0.0,
+            "end": 9.98,
+            "text": "Cheers and applause"
+        },
+        {
+            "start": 126.38,
+            "end": 132.12,
+            "text": "Oh wow, oh wow, oh wow, oh wow"
+        },
+        {
+            "start": 132.12,
+            "end": 134.96,
+            "text": "I can now just say it's not me, no, it's not me"
+        },
+        {
+            "start": 144.32,
+            "end": 164.94,
+            "text": "I can now just say it's not me, no, it's not me"
+        },
+        {
+            "start": 185.14,
+            "end": 194.94,
+            "text": "I can now just say it's not me, no, it's not me"
+        },
+        {
+            "start": 194.96,
+            "end": 196.48,
+            "text": "Let's go, let's go."
+        },
+        {
+            "start": 225.62,
+            "end": 254.84,
+            "text": "Let's go, let's go."
+        },
+        {
+            "start": 258.1,
+            "end": 262.2,
+            "text": "Let's go, let's go."
+        },
+        {
+            "start": 309.92,
+            "end": 311.22,
+            "text": "Let's go, let's go."
+        },
+        {
+            "start": 322.66,
+            "end": 328.08,
+            "text": "Let's go, let's go."
+        }
+    ],
+    "full_text": "Cheers and applause Oh wow, oh wow, oh wow, oh wow I can now just say it's not me, no, it's not me I can now just say it's not me, no, it's not me I can now just say it's not me, no, it's not me Let's go, let's go. Let's go, let's go. Let's go, let's go. Let's go, let's go. Let's go, let's go."
+}

@@ -1,0 +1,13 @@
+{
+    "file_path": "data/raw/audio/sample1.mp3",
+    "language": "ru",
+    "duration": 18.3,
+    "segments": [
+        {
+            "start": 7.6,
+            "end": 12.34,
+            "text": "Ливанский, ксир, путья, наиболее сир"
+        }
+    ],
+    "full_text": "Ливанский, ксир, путья, наиболее сир"
+}
