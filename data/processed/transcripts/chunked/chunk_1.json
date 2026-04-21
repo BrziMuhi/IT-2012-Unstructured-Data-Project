@@ -1,0 +1,9 @@
+{
+    "chunk_index": 1,
+    "source_file": "data/processed/audio/extracted_audio.mp3",
+    "chunk_start_sec": 60.0,
+    "chunk_end_sec": 120.0,
+    "language": "en",
+    "segments": [],
+    "full_text": ""
+}

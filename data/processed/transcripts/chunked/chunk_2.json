@@ -1,0 +1,50 @@
+{
+    "chunk_index": 2,
+    "source_file": "data/processed/audio/extracted_audio.mp3",
+    "chunk_start_sec": 120.0,
+    "chunk_end_sec": 180.0,
+    "language": "en",
+    "segments": [
+        {
+            "start": 125.16,
+            "end": 126.1,
+            "text": "Oh, my God."
+        },
+        {
+            "start": 126.86,
+            "end": 130.42,
+            "text": "Oh, my God."
+        },
+        {
+            "start": 131.48,
+            "end": 134.0,
+            "text": "I can tell you say it's not me, but my son."
+        },
+        {
+            "start": 136.52,
+            "end": 137.14,
+            "text": "Look!"
+        },
+        {
+            "start": 138.8,
+            "end": 139.42,
+            "text": "Look!"
+        },
+        {
+            "start": 141.12,
+            "end": 141.74,
+            "text": "Look!"
+        },
+        {
+            "start": 144.88,
+            "end": 145.5,
+            "text": "Look!"
+        },
+        {
+            "start": 148.16,
+            "end": 148.78,
+            "text": "Look!"
+        }
+    ],
+    "full_text": "Oh, my God. Oh, my God. I can tell you say it's not me, but my son. Look! Look! Look! Look! Look!"
+}

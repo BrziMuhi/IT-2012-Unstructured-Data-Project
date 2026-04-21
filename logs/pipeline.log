@@ -1,0 +1,32 @@
+2026-04-17 16:00:58,760 - INFO - Task 1 started: inspect audio files
+2026-04-17 16:00:58,983 - INFO - Task 1 completed
+2026-04-17 16:00:58,983 - INFO - Task 2 started: trim audio
+2026-04-17 16:00:59,073 - INFO - Task 2 completed: trimmed audio saved
+2026-04-17 16:00:59,073 - INFO - Task 3 started: concatenate audio
+2026-04-17 16:00:59,164 - INFO - Task 3 completed: combined audio saved
+2026-04-17 16:00:59,165 - INFO - Task 4 started: volume and fade
+2026-04-17 16:00:59,284 - INFO - Task 4 completed: volume and fade files saved
+2026-04-17 16:00:59,285 - INFO - Task 5 started: convert audio format
+2026-04-17 16:00:59,454 - INFO - Task 5 completed: converted audio saved
+2026-04-17 16:00:59,454 - INFO - Task 6 started: video processing
+2026-04-17 16:01:03,858 - INFO - Task 6 completed: video inspected and audio extracted
+2026-04-17 16:01:03,858 - INFO - Task 7 started: keyframe extraction
+2026-04-17 16:01:10,708 - INFO - Task 7 completed: keyframes extracted
+2026-04-17 16:01:10,708 - INFO - Task 8 started: short audio transcription
+2026-04-17 16:01:11,809 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base/revision/main "HTTP/1.1 200 OK"
+2026-04-17 16:01:12,382 - INFO - Processing audio with duration 00:18.297
+2026-04-17 16:01:13,049 - INFO - Detected language 'ru' with probability 0.28
+2026-04-17 16:01:13,865 - INFO - Task 8 completed: short audio transcript saved
+2026-04-17 16:01:13,865 - INFO - Task 9 started: transcribe extracted video audio
+2026-04-17 16:01:14,014 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base/revision/main "HTTP/1.1 200 OK"
+2026-04-17 16:01:14,866 - INFO - Processing audio with duration 05:31.300
+2026-04-17 16:01:15,669 - INFO - Detected language 'en' with probability 0.51
+2026-04-17 16:02:14,639 - INFO - Task 9 completed: video audio transcript saved
+2026-04-17 16:02:14,639 - INFO - Task 10 started: chunked transcription
+2026-04-17 16:02:15,387 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base/revision/main "HTTP/1.1 200 OK"
+2026-04-17 16:02:15,946 - INFO - Task 10 completed: chunked transcript saved
+2026-04-17 16:02:15,947 - INFO - Task 11 started: save transcript to MongoDB
+2026-04-17 16:02:16,104 - INFO - HTTP Request: GET https://huggingface.co/api/models/Systran/faster-whisper-base/revision/main "HTTP/1.1 200 OK"
+2026-04-17 16:02:16,595 - INFO - Processing audio with duration 00:18.297
+2026-04-17 16:02:17,223 - INFO - Detected language 'ru' with probability 0.28
+2026-04-17 16:02:18,117 - INFO - Task 11 completed: transcript stored in MongoDB
