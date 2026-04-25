@@ -1,0 +1,16 @@
+issue_type,column,issue_count,description,severity
+missing_values,name,1111,75.53% missing values,high
+missing_values,city,1111,75.53% missing values,high
+missing_values,country,1111,75.53% missing values,high
+missing_values,postcode,1147,77.97% missing values,high
+missing_values,street,1156,78.59% missing values,high
+missing_values,categories,1111,75.53% missing values,high
+missing_values,longitude,1111,75.53% missing values,high
+missing_values,latitude,1111,75.53% missing values,high
+missing_values,website,1426,96.94% missing values,high
+missing_values,formatted_address,1111,75.53% missing values,high
+outlier_iqr,longitude,24,24 outliers found in longitude,
+outlier_iqr,latitude,48,48 outliers found in latitude,
+missing_title,name,1111,Missing values found in name column,
+empty_title,name,1111,Empty titles found in name column,
+duplicate_id,_id,1081,Duplicate MongoDB IDs found after flattening nested records,

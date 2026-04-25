@@ -15,6 +15,17 @@ from scraping.dynamic_scraper import scrape_json_api, scrape_with_selenium
 from ocr.ocr_utils import ocr_image, ocr_scanned_pdf
 
 
+from analytics.numpy_ops import run_numpy_operations
+from analytics.data_loader import run_data_loader
+from analytics.explorer import run_exploration
+from analytics.selector import run_selector
+from analytics.regex_ops import run_regex_ops
+from analytics.quality_report import run_quality_report
+from analytics.data_loader import load_csv
+
+
+
+
 def run_pipeline():
     logging.info("Pipeline started")
 
@@ -35,9 +46,9 @@ def run_pipeline():
         #     file_name = f"page_{page}.json"
         #     upload_file_to_s3(file_path, file_name)
 
-        # ---------------------------------
-        # 2. Single-page scraping
-        # ---------------------------------
+        
+        #2. Single-page scraping
+ 
         logging.info("Starting single-page scraping...")
         single_page_data = scrape_single_page(
             "https://books.toscrape.com/",
@@ -97,9 +108,28 @@ def run_pipeline():
 
         logging.info("Pipeline finished successfully")
 
+
+
+               
+        # 8. Lab 8 analytics
+     
+        logging.info("Starting Lab 8 analytics")
+
+        run_numpy_operations()
+        run_data_loader()
+
+        df = load_csv()
+        run_exploration(df)
+
+        run_selector()
+        run_regex_ops()
+        run_quality_report()
+
+        
+        logging.info("Pipeline finished successfully")
+
     except Exception as e:
         logging.error(f"Pipeline failed: {e}")
-
 
 if __name__ == "__main__":
     run_pipeline()
