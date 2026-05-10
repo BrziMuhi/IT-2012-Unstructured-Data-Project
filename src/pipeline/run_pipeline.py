@@ -24,12 +24,63 @@ from analytics.quality_report import run_quality_report
 
 from cleaning.clean_pipeline import run_cleaning_pipeline
 
+from analytics.db_connector import get_connection, create_places_table, populate_places, query_places
+from analytics.pivot_builder import add_primary_category, category_year_pivot, city_category_crosstab
+from analytics.aggregator import genre_summary, yearly_trends
+from analytics.time_series import parse_dates, add_date_parts, monthly_time_series, yearly_time_series, add_rolling_averages
+from analytics.insight_reporter import run_all_questions
+
+
+
+def run_lab10_analytics():
+    logging.info("Starting Lab 10 analytics")
+
+    cleaned_path = "processed/cleaned/cleaned_data.csv"
+    analytics_dir = "processed/analytics"
+
+    os.makedirs(analytics_dir, exist_ok=True)
+
+    if not os.path.exists(cleaned_path):
+        logging.warning(f"Skipping Lab 10 because cleaned CSV not found: {cleaned_path}")
+        return
+
+    df = pd.read_csv(cleaned_path)
+    df = df.rename(columns={"_id": "place_id"})
+
+    conn = get_connection(password="root")
+    create_places_table(conn)
+    populate_places(conn, cleaned_path)
+    mysql_df = query_places(conn)
+    conn.close()
+
+    logging.info(f"MySQL rows loaded: {len(mysql_df)}")
+
+    df = add_primary_category(df)
+
+    genre_summary(df).to_csv(f"{analytics_dir}/category_analysis.csv", index=False)
+    yearly_trends(df).to_csv(f"{analytics_dir}/yearly_trends.csv", index=False)
+
+    category_year_pivot(df).to_csv(f"{analytics_dir}/pivot_category_year.csv")
+    city_category_crosstab(df).to_csv(f"{analytics_dir}/city_category_crosstab.csv")
+
+    df = parse_dates(df)
+    df = add_date_parts(df)
+
+    monthly = add_rolling_averages(monthly_time_series(df))
+    monthly.to_csv(f"{analytics_dir}/monthly_time_series.csv", index=False)
+
+    yearly_time_series(df).to_csv(f"{analytics_dir}/yearly_time_series.csv", index=False)
+
+    run_all_questions(df)
+
+    logging.info("Lab 10 analytics completed")
+
 
 def run_pipeline():
     logging.info("Pipeline started")
 
     try:
-        # 1. API data
+        # Lab 1 API data
         logging.info("Fetching API data...")
         places = fetch_places(3)
 
@@ -43,7 +94,7 @@ def run_pipeline():
         #     file_name = f"page_{page}.json"
         #     upload_file_to_s3(file_path, file_name)
 
-        # 2. Single-page scraping
+        # Lab 2 Single-page scraping
         logging.info("Starting single-page scraping...")
         single_page_data = scrape_single_page(
             "https://books.toscrape.com/",
@@ -53,7 +104,7 @@ def run_pipeline():
         if single_page_data:
             save_to_mongo(single_page_data, "scraped_data")
 
-        # 3. Multi-page scraping
+        # Lab 3 Multi-page scraping
         logging.info("Starting multi-page scraping...")
         multi_page_data = scrape_multi_page(
             "https://books.toscrape.com/catalogue/page-{page}.html",
@@ -65,21 +116,21 @@ def run_pipeline():
         if multi_page_data:
             save_to_mongo(multi_page_data, "scraped_data")
 
-        # 4. JSON API scraping
+        # Lab 4 JSON API scraping
         logging.info("Starting JSON API scraping...")
         json_api_data = scrape_json_api("https://jsonplaceholder.typicode.com/posts")
 
         if json_api_data:
             save_to_mongo(json_api_data, "scraped_data")
 
-        # 5. Selenium fallback
+        # Lab 5 Selenium fallback
         logging.info("Starting Selenium scraping...")
         selenium_data = scrape_with_selenium("https://quotes.toscrape.com/js/")
 
         if selenium_data:
             save_to_mongo(selenium_data, "scraped_data")
 
-        # 6. OCR image
+        # Lab 6 OCR image
         image_path = "data/raw/images/test_scan.png"
 
         if os.path.exists(image_path):
@@ -89,7 +140,7 @@ def run_pipeline():
             if image_result:
                 save_to_mongo(image_result, "ocr_data")
 
-        # 7. OCR scanned PDF
+        # Lab 7 OCR scanned PDF
         pdf_path = "data/raw/scanned/test_scan.pdf"
 
         if os.path.exists(pdf_path):
@@ -99,7 +150,7 @@ def run_pipeline():
             if pdf_results:
                 save_to_mongo(pdf_results, "ocr_data")
 
-        # 8. Lab 8 analytics
+        # Lab 8 analytics
         logging.info("Starting Lab 8 analytics")
 
         run_numpy_operations()
@@ -112,7 +163,7 @@ def run_pipeline():
         run_regex_ops()
         run_quality_report()
 
-        # 9. Lab 9 cleaning
+        #  Lab 9 cleaning
         logging.info("Starting Lab 9 cleaning pipeline")
 
         if df is not None and not df.empty:
@@ -120,6 +171,14 @@ def run_pipeline():
             logging.info(f"Cleaning completed. Cleaned rows: {len(clean_df)}")
         else:
             logging.warning("Skipping Lab 9 cleaning because dataframe is empty")
+
+  
+
+        # Lab 10 analytics
+        run_lab10_analytics()
+
+        
+
 
     except Exception as e:
         logging.error(f"Pipeline failed: {e}")

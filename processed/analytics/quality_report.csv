@@ -1,16 +1,16 @@
 issue_type,column,issue_count,description,severity
-missing_values,name,2405,80.03% missing values,high
-missing_values,city,2405,80.03% missing values,high
-missing_values,country,2405,80.03% missing values,high
-missing_values,postcode,2465,82.03% missing values,high
-missing_values,street,2482,82.6% missing values,high
-missing_values,categories,2405,80.03% missing values,high
-missing_values,longitude,2405,80.03% missing values,high
-missing_values,latitude,2405,80.03% missing values,high
-missing_values,website,2928,97.44% missing values,high
-missing_values,formatted_address,2405,80.03% missing values,high
-outlier_iqr,longitude,40,40 outliers found in longitude,
-outlier_iqr,latitude,80,80 outliers found in latitude,
-missing_title,name,2405,Missing values found in name column,
-empty_title,name,2405,Empty titles found in name column,
-duplicate_id,_id,2339,Duplicate MongoDB IDs found after flattening nested records,
+missing_values,name,2588,80.45% missing values,high
+missing_values,city,2587,80.42% missing values,high
+missing_values,country,2587,80.42% missing values,high
+missing_values,postcode,2650,82.37% missing values,high
+missing_values,street,2667,82.9% missing values,high
+missing_values,categories,2587,80.42% missing values,high
+missing_values,longitude,2587,80.42% missing values,high
+missing_values,latitude,2587,80.42% missing values,high
+missing_values,website,3140,97.61% missing values,high
+missing_values,formatted_address,2587,80.42% missing values,high
+outlier_iqr,longitude,47,47 outliers found in longitude,
+outlier_iqr,latitude,86,86 outliers found in latitude,
+missing_title,name,2588,Missing values found in name column,
+empty_title,name,2588,Empty titles found in name column,
+duplicate_id,_id,2516,Duplicate MongoDB IDs found after flattening nested records,

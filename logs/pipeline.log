@@ -217,3 +217,33 @@
 2026-05-02 11:01:53,813 - INFO - Cleaned data saved to processed/cleaned/cleaned_data.csv
 2026-05-02 11:01:53,813 - INFO - Cleaning pipeline finished
 2026-05-02 11:01:53,813 - INFO - Cleaning completed. Cleaned rows: 666
+2026-05-10 11:57:15,942 - INFO - Pipeline started
+2026-05-10 11:57:15,943 - INFO - Fetching API data...
+2026-05-10 11:57:18,472 - INFO - Saving API data to MongoDB...
+2026-05-10 11:57:18,493 - INFO - Starting single-page scraping...
+2026-05-10 11:57:19,091 - INFO - Scraping single page: https://books.toscrape.com/
+2026-05-10 11:57:21,837 - INFO - Starting multi-page scraping...
+2026-05-10 11:57:22,258 - INFO - Scraping page 1: https://books.toscrape.com/catalogue/page-1.html
+2026-05-10 11:57:25,348 - INFO - Scraping page 2: https://books.toscrape.com/catalogue/page-2.html
+2026-05-10 11:57:28,462 - INFO - Scraping page 3: https://books.toscrape.com/catalogue/page-3.html
+2026-05-10 11:57:31,132 - INFO - Starting JSON API scraping...
+2026-05-10 11:57:31,132 - INFO - Scraping JSON API: https://jsonplaceholder.typicode.com/posts
+2026-05-10 11:57:31,704 - INFO - Starting Selenium scraping...
+2026-05-10 11:57:31,705 - INFO - Scraping dynamic page with Selenium: https://quotes.toscrape.com/js/
+2026-05-10 11:57:37,337 - INFO - Starting OCR on image...
+2026-05-10 11:57:37,337 - INFO - OCR image: data/raw/images/test_scan.png
+2026-05-10 11:57:39,162 - INFO - Starting OCR on scanned PDF...
+2026-05-10 11:57:39,162 - INFO - OCR scanned PDF: data/raw/scanned/test_scan.pdf
+2026-05-10 11:57:40,043 - INFO - Starting Lab 8 analytics
+2026-05-10 11:57:41,730 - INFO - Starting Lab 9 cleaning pipeline
+2026-05-10 11:57:41,731 - INFO - Starting cleaning pipeline
+2026-05-10 11:57:41,731 - INFO - Available columns: ['_id', 'source', 'timestamp', 'name', 'city', 'country', 'postcode', 'street', 'categories', 'longitude', 'latitude', 'website', 'formatted_address']
+2026-05-10 11:57:41,732 - INFO - Dropped rows with missing _id
+2026-05-10 11:57:41,754 - INFO - Removed exact duplicates: 2516
+2026-05-10 11:57:41,755 - INFO - Duplicate count in _id: 0
+2026-05-10 11:57:41,763 - INFO - Cleaned data saved to processed/cleaned/cleaned_data.csv
+2026-05-10 11:57:41,763 - INFO - Cleaning pipeline finished
+2026-05-10 11:57:41,763 - INFO - Cleaning completed. Cleaned rows: 701
+2026-05-10 11:57:41,763 - INFO - Starting Lab 10 analytics
+2026-05-10 11:57:42,128 - INFO - MySQL rows loaded: 701
+2026-05-10 11:57:42,213 - INFO - Lab 10 analytics completed
