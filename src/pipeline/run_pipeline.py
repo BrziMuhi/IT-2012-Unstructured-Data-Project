@@ -30,6 +30,7 @@ from analytics.aggregator import genre_summary, yearly_trends
 from analytics.time_series import parse_dates, add_date_parts, monthly_time_series, yearly_time_series, add_rolling_averages
 from analytics.insight_reporter import run_all_questions
 
+from embeddings.chroma_store import add_movies_to_chroma
 
 
 def run_lab10_analytics():
@@ -163,7 +164,7 @@ def run_pipeline():
         run_regex_ops()
         run_quality_report()
 
-        #  Lab 9 cleaning
+        # Lab 9 cleaning
         logging.info("Starting Lab 9 cleaning pipeline")
 
         if df is not None and not df.empty:
@@ -172,13 +173,24 @@ def run_pipeline():
         else:
             logging.warning("Skipping Lab 9 cleaning because dataframe is empty")
 
-  
-
         # Lab 10 analytics
         run_lab10_analytics()
 
-        
+        # Lab 11 embeddings
+        logging.info("Starting Lab 11 embeddings...")
 
+        try:
+            cleaned_path = "processed/cleaned/cleaned_data.csv"
+
+            if os.path.exists(cleaned_path):
+                df_embeddings = pd.read_csv(cleaned_path)
+                add_movies_to_chroma(df_embeddings, reset=False)
+                logging.info("Lab 11 embeddings completed successfully")
+            else:
+                logging.warning("Skipping Lab 11: cleaned dataset not found")
+
+        except Exception as e:
+            logging.error(f"Lab 11 embeddings failed: {e}")
 
     except Exception as e:
         logging.error(f"Pipeline failed: {e}")
