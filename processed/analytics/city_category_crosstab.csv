@@ -1,6 +1,6 @@
 city,access,activity,building,education,heritage,leisure,natural,populated_place,tourism,unknown,All
-city of sarajevo,0,0,37,0,17,0,0,20,2,0,76
+city of sarajevo,0,0,37,0,17,0,0,20,6,0,80
 mz trebević,0,0,20,0,0,0,0,0,0,0,20
-sarajevo,1,20,361,17,6,21,3,0,105,0,534
-unknown,0,0,0,0,0,0,0,0,0,71,71
-All,1,20,418,17,23,21,3,20,107,71,701
+sarajevo,3,20,363,17,6,23,3,0,155,0,590
+unknown,0,0,0,0,0,0,0,0,0,81,81
+All,3,20,420,17,23,23,3,20,161,81,771
