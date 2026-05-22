@@ -32,6 +32,8 @@ from analytics.insight_reporter import run_all_questions
 
 from embeddings.chroma_store import add_movies_to_chroma
 
+from visualization.chart_generator import generate_all_charts
+
 
 def run_lab10_analytics():
     logging.info("Starting Lab 10 analytics")
@@ -173,7 +175,8 @@ def run_pipeline():
         else:
             logging.warning("Skipping Lab 9 cleaning because dataframe is empty")
 
-        # Lab 10 analytics
+    
+         # Lab 10 analytics
         run_lab10_analytics()
 
         # Lab 11 embeddings
@@ -192,9 +195,19 @@ def run_pipeline():
         except Exception as e:
             logging.error(f"Lab 11 embeddings failed: {e}")
 
+        # Lab 12 visualizations
+        run_visualizations_pipeline()
+
     except Exception as e:
         logging.error(f"Pipeline failed: {e}")
 
 
+def run_visualizations_pipeline():
+    print("Generating visualizations...")
+    generate_all_charts("processed/cleaned/cleaned_data.csv")
+    print("Visualization pipeline completed.")
+
+
 if __name__ == "__main__":
-    run_pipeline()
+    run_pipelin
+        
