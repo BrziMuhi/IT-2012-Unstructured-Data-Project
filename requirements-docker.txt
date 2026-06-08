@@ -1,0 +1,7 @@
+dash>=2.17.0
+dash-bootstrap-components>=1.6.0
+pymongo>=4.6.0
+gunicorn>=22.0.0
+websockets>=12.0.0
+pandas
+plotly
